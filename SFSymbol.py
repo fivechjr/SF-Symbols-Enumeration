@@ -1,4 +1,4 @@
-# python3 generate.py >> SFSymbols.swift
+# python3 SFSymbol.py >> SFSymbol.swift
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
@@ -30,7 +30,7 @@ def generateSwiftEnumerationCase(property):
 	return 'case `' + generateSymbolName(property) + '` = ' + '"' + property + '"'
 
 def main():
-	fileName = os.path.expanduser('NameAvailability.plist')
+	fileName = os.path.expanduser('name_availability.plist')
 	propertyList = plistlib.readPlist(fileName)
 	if 'symbols' in propertyList:
 		generateSwiftEnumeration(propertyList)
