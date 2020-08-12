@@ -21,13 +21,13 @@ def generateSymbolName(symbolName):
 	return "".join(name)			
 
 def generateSwiftEnumeration(propertyList):
-	print("enum SFSymbols: String {")
+	print("enum SFSymbol: String {")
 	for property in propertyList['symbols']:
 		print('    ' + generateSwiftEnumerationCase(property))
 	print("}")	
 
 def generateSwiftEnumerationCase(property):
-	return 'case ' + generateSymbolName(property) + ' = ' + '"' + property + '"'
+	return 'case `' + generateSymbolName(property) + '` = ' + '"' + property + '"'
 
 def main():
 	fileName = os.path.expanduser('NameAvailability.plist')
